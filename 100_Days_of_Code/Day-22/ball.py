@@ -1,7 +1,9 @@
 from turtle import Turtle
-
+l_paddle_score = 0
+r_paddle_score = 0
 
 class Ball(Turtle): 
+
     def __init__(self):
         super().__init__()
         self.color("white")
@@ -16,21 +18,17 @@ class Ball(Turtle):
         new_y = self.ycor() + self.y_move
         self.goto(new_x, new_y)
 
-    def bounce(self):
+    def bounce_y(self):
         self.y_move *= -1 
  
+    def bounce_x(self):
+        self.x_move *= -1
 
-
-
-
-
-    # def bounce(self):
-    #     while True:
-    #         new_x = self.xcor() +10
+    def reset_position(self):
+        
             
-    #         if self.ycor() == ycor(299):
-    #             new_y = self.ycor() -10    
-    #         elif self.ycor() == ycor(-299):
-    #             new_y = self.ycor() +10
+            self.goto(0,0)
+            self.bounce_x()
 
-        # when ball reaches -300 or 300 bounces random angle between something
+
+    #if ball.distance(paddle) and
